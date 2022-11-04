@@ -24,6 +24,11 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Image.asset(
+                  'assets/images/logo-dark-full.png',
+                  width: 200,
+                ),
+                const SizedBox(height: 60),
                 TextField(
                   onChanged: (text) {
                     email = text;
@@ -54,7 +59,16 @@ class _LoginPageState extends State<LoginPage> {
                       print('Credenciais inválidas');
                     }
                   },
-                  child: const Text('Entrar'),
+                  child: const Text('Entrar', style: TextStyle(fontSize: 16)),
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.indigo,
+                    minimumSize: const Size(400, 55),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(4)),
+                    ),
+                  ),
                 )
               ],
             ),
