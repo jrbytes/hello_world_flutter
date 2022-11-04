@@ -27,25 +27,31 @@ class _LoginPageState extends State<LoginPage> {
                 width: 200,
               ),
               const SizedBox(height: 60),
-              TextField(
-                onChanged: (text) {
-                  email = text;
-                },
-                keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(
-                  labelText: 'E-mail',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                onChanged: (text) {
-                  password = text;
-                },
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: 'Senha',
-                  border: OutlineInputBorder(),
+              Card(
+                child: Column(
+                  children: [
+                    TextField(
+                      onChanged: (text) {
+                        email = text;
+                      },
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: const InputDecoration(
+                        labelText: 'E-mail',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    TextField(
+                      onChanged: (text) {
+                        password = text;
+                      },
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        labelText: 'Senha',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(height: 15),
@@ -61,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextButton.styleFrom(
                   primary: Colors.white,
                   backgroundColor: Colors.indigo,
-                  minimumSize: const Size(400, 55),
+                  minimumSize: const Size(double.infinity, 55),
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -81,6 +87,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Stack(
         children: [
           SizedBox(
+            width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Image.asset('assets/images/bg.png', fit: BoxFit.cover),
           ),
