@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/app_controller.dart';
+import 'package:hello_world/login_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,8 +15,38 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: ClipRRect(
+                borderRadius: BorderRadius.circular(40),
+                child: Image.network('https://github.com/jrbytes.png'),
+              ),
+              accountName: const Text('Itamar Junior'),
+              accountEmail: const Text('jr@gmail.com'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('INÍCIO'),
+              subtitle: const Text('Tela de início'),
+              onTap: () {
+                print('Home');
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.exit_to_app),
+              title: const Text('SAIR'),
+              subtitle: const Text('Finalizar aplicação'),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              },
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
-        title: Text('Página Inicial'),
+        title: const Text('Página Inicial'),
         actions: [
           CustomSwitch(),
         ],
@@ -29,15 +60,15 @@ class HomePageState extends State<HomePage> {
             CustomSwitch(),
             Center(
               child: GestureDetector(
-                child:
-                    Text('Contador: $counter', style: TextStyle(fontSize: 24)),
+                child: Text('Contador: $counter',
+                    style: const TextStyle(fontSize: 24)),
               ),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           setState(() {
             counter++;
