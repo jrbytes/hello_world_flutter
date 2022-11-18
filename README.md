@@ -1,16 +1,8 @@
-# hello_world
+[![Cover](./assets/hello-world-flutter.png)](https://github.com/jrbytes/hello_world_flutter/blob/main/assets/hello-world-flutter.png)
 
-A new Flutter project.
 
-## Getting Started
+# Hello World Flutter
 
-This project is a starting point for a Flutter application.
+Comecei aprender Dart e Flutter, vendo os conteúdos do canal Flutterando. Por mais simples que sejam os projetos, irei criar um repositório para armazena-los. Dessa forma, posso acompanhar o meu progresso e também compartilhar com vocês.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Esse é um exemplo diferente de Hello World, onde tem uma tela de login e um Switcher para alterar o tema light ou dark.
